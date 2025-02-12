@@ -5,13 +5,13 @@ A utility library for simplifying common Web3 tasks like generating wallets.
 ## Installation
 
 ```bash
-bun add web3-utils
+bun add @aliezzahn/web3-utils
 ```
 
 ## Usage
 
 ```js
-import { WalletUtils } from "web3-utils";
+import { WalletUtils } from "@aliezzahn/web3-utils";
 
 // Generate a new wallet
 const wallet = WalletUtils.generateWallet();
