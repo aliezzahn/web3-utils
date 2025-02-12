@@ -1,0 +1,30 @@
+{
+  "name": "@aliezzahn/web3-utils",
+  "description": "A utility library for simplifying common Web3 tasks like generating wallets.",
+  "version": "1.0.0",
+  "module": "index.ts",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "bun run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliezzahn/web3-utils.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^22.13.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "bip39": "^3.1.0",
+    "ethers": "^6.13.5"
+  }
+}
