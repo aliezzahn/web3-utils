@@ -20,6 +20,12 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Cache Bun
+        uses: actions/cache@v3
+        with:
+          path: ~/.bun
+          key: bun-${{ runner.os }}
+
       - name: Build project
         run: bun run build
 
