@@ -45,7 +45,17 @@ This package is published to **GitHub Packages**. To install it:
 3. **Install the package**:
    Run the following command to install Web3 Utils:
    ```bash
+   # Using Bun
+   bun add @aliezzahn/web3-utils
+   
+   # Using npm
    npm install @aliezzahn/web3-utils
+   
+   # Using yarn
+   yarn add @aliezzahn/web3-utils
+   
+   # Using pnpm
+   pnpm add @aliezzahn/web3-utils
    ```
 
 ### From NPM (or Bun)
@@ -73,6 +83,94 @@ console.log("Private Key:", wallet.privateKey);
 console.log("Public Key:", wallet.publicKey);
 console.log("Address:", wallet.address);
 ```
+
+### Converting between units
+
+Converting between units (wei, gwei, ether).
+
+```typescript
+import {
+  weiToEther,
+  etherToWei,
+  weiToGwei,
+  gweiToWei,
+  gweiToEther,
+  etherToGwei,
+} from '@aliezzahn/web3-utils';
+```
+
+---
+
+### Examples
+
+#### Convert Wei to Ether
+
+```typescript
+const etherValue = weiToEther('1000000000000000000'); // 1.0
+console.log(etherValue); // Output: 1.0
+```
+
+#### Convert Ether to Wei
+
+```typescript
+const weiValue = etherToWei('1.0'); // 1000000000000000000n (bigint)
+console.log(weiValue.toString()); // Output: 1000000000000000000
+```
+
+#### Convert Wei to Gwei
+
+```typescript
+const gweiValue = weiToGwei('1000000000'); // 1.0
+console.log(gweiValue); // Output: 1.0
+```
+
+#### Convert Gwei to Wei
+
+```typescript
+const weiValue = gweiToWei('1.0'); // 1000000000n (bigint)
+console.log(weiValue.toString()); // Output: 1000000000
+```
+
+#### Convert Gwei to Ether
+
+```typescript
+const etherValue = gweiToEther('1000000000'); // 1.0
+console.log(etherValue); // Output: 1.0
+```
+
+#### Convert Ether to Gwei
+
+```typescript
+const gweiValue = etherToGwei('1.0'); // 1000000000.0
+console.log(gweiValue); // Output: 1000000000.0
+```
+
+---
+
+## API Reference
+
+### Functions
+
+#### `weiToEther(wei: string | bigint): string`
+Converts a value in **wei** to **ether**.
+
+#### `etherToWei(ether: string | number): bigint`
+Converts a value in **ether** to **wei**.
+
+#### `weiToGwei(wei: string | bigint): string`
+Converts a value in **wei** to **gwei**.
+
+#### `gweiToWei(gwei: string | number): bigint`
+Converts a value in **gwei** to **wei**.
+
+#### `gweiToEther(gwei: string | number): string`
+Converts a value in **gwei** to **ether**.
+
+#### `etherToGwei(ether: string | number): string`
+Converts a value in **ether** to **gwei**.
+
+---
+
 
 ### Sign and Verify a Message (Soon)
 
@@ -132,10 +230,13 @@ An ABI (Application Binary Interface) is a JSON file that defines how to interac
 
 ## Contributing
 
-Contributions are welcome! If you find a bug or have a feature request, please open an issue or submit a pull request. Here's how:
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+
 1. Fork the repository.
-2. Create a new branch for your changes.
-3. Submit a pull request with a detailed description of your changes.
+2. Create a new branch (`git checkout -b feature/YourFeatureName`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeatureName`).
+5. Open a pull request.
 
 ---
 
@@ -147,7 +248,17 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Support
 
-If you have any questions or need help, feel free to open an issue in the [GitHub repository](https://github.com/aliezzahn/web3-utils).
+If you find this library useful, consider giving it a ⭐️ on [GitHub](https://github.com/aliezzahn/web3-utils). For any issues or feature requests, please open an issue on the [GitHub repository](https://github.com/aliezzahn/web3-utils/issues).
 
-Happy coding! 🚀
+---
+
+## Author
+
+- **Ali Ezzahn**  
+  GitHub: [@aliezzahn](https://github.com/aliezzahn)  
+  Email: [aliezzahn@gmail.com](aliezzahn@gmail.com)
+
+---
+
+Enjoy using **Web3 Utils**! 🚀
 ---
